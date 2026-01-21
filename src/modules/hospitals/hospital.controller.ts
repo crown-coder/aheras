@@ -1,0 +1,17 @@
+import { Request, Response } from "express";
+import { db } from "../../config/db";
+import { users, hospitalProfiles } from "../../config/schema";
+import { eq } from "drizzle-orm";
+
+export const getSecondaryHospitals = async (req: Request, res: Response) => {
+  const hospitals = await db
+    .select({
+      id: users.id,
+      name: hospitalProfiles.hospitalName,
+    })
+    .from(users)
+    .innerJoin(hospitalProfiles, eq(users.id, hospitalProfiles.userId))
+    .where(eq(users.hospitalType, "SECONDARY"));
+
+  res.json(hospitals);
+};

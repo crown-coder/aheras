@@ -1,0 +1,25 @@
+import { Router } from "express";
+import { authenticate } from "../../middlewares/auth.middleware";
+import { requireHospitalType } from "../../middlewares/role.middleware";
+import {
+  create,
+  outgoing,
+  incoming,
+  accept,
+  reject,
+} from "./referral.controller";
+
+const router = Router();
+
+router.use(authenticate);
+
+/* PRIMARY */
+router.post("/", requireHospitalType("PRIMARY"), create);
+router.get("/outgoing", requireHospitalType("PRIMARY"), outgoing);
+
+/* SECONDARY */
+router.get("/incoming", requireHospitalType("SECONDARY"), incoming);
+router.post("/:id/accept", requireHospitalType("SECONDARY"), accept);
+router.post("/:id/reject", requireHospitalType("SECONDARY"), reject);
+
+export default router;
