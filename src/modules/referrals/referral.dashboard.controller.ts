@@ -1,11 +1,11 @@
 import { Response } from "express";
-import { AuthRequest } from "../../middlewares/auth.middleware";
+import { AuthRequest } from "../../middlewares/auth.middleware.js";
 import {
   primarySummary,
   primaryRecentReferrals,
   secondarySummary,
   secondaryRecentReferrals,
-} from "./referral.dashboard.service";
+} from "./referral.dashboard.service.js";
 
 export const primaryDashboard = async (req: AuthRequest, res: Response) => {
   const hospitalId = req.user!.userId;

@@ -2,8 +2,8 @@ import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import { eq } from "drizzle-orm";
 
-import { db } from "../../config/db";
-import { users, hospitalProfiles } from "../../config/schema";
+import { db } from "../../config/db.js";
+import { users, hospitalProfiles } from "../../config/schema.js";
 
 const JWT_SECRET = process.env.JWT_SECRET!;
 

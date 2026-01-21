@@ -1,12 +1,12 @@
 import { Response } from "express";
-import { AuthRequest } from "../../middlewares/auth.middleware";
+import { AuthRequest } from "../../middlewares/auth.middleware.js";
 import {
   createPatient,
   getPatientsByHospital,
   getPatientById,
   updatePatient,
   deletePatient,
-} from "./patient.service";
+} from "./patient.service.js";
 
 export const create = async (req: AuthRequest, res: Response) => {
   try {

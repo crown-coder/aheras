@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import { db } from "../../config/db";
-import { users, hospitalProfiles } from "../../config/schema";
+import { db } from "../../config/db.js";
+import { users, hospitalProfiles } from "../../config/schema.js";
 import { eq } from "drizzle-orm";
 
 export const getSecondaryHospitals = async (req: Request, res: Response) => {

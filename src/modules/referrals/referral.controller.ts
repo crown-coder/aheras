@@ -1,11 +1,11 @@
 import { Response } from "express";
-import { AuthRequest } from "../../middlewares/auth.middleware";
+import { AuthRequest } from "../../middlewares/auth.middleware.js";
 import {
   createReferral,
   getIncomingReferrals,
   getOutgoingReferrals,
   updateReferralStatus,
-} from "./referral.service";
+} from "./referral.service.js";
 
 /* =========================
    PRIMARY

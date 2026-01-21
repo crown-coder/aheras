@@ -1,6 +1,6 @@
 import { eq, and } from "drizzle-orm";
-import { db } from "../../config/db";
-import { patients } from "../../config/schema";
+import { db } from "../../config/db.js";
+import { patients } from "../../config/schema.js";
 
 export const createPatient = async (
   hospitalId: number,

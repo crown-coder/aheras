@@ -1,6 +1,6 @@
 import { eq, and } from "drizzle-orm";
-import { db } from "../../config/db";
-import { referrals, patients } from "../../config/schema";
+import { db } from "../../config/db.js";
+import { referrals, patients } from "../../config/schema.js";
 
 /* =========================
    CREATE REFERRAL (PRIMARY)

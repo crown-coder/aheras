@@ -1,6 +1,6 @@
 import { eq, count, sql } from "drizzle-orm";
-import { db } from "../../config/db";
-import { referrals, patients, hospitalProfiles } from "../../config/schema";
+import { db } from "../../config/db.js";
+import { referrals, patients, hospitalProfiles } from "../../config/schema.js";
 
 /* =========================
    PRIMARY DASHBOARD
